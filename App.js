@@ -23,7 +23,7 @@ export default function App() {
           <Stack.Screen name="All Products" component={ProductOverviewScreen}
             options={{
               headerStyle:{
-                backgroundColor:'#f4511e'
+                backgroundColor:'#0C1E7F'
               },
               headerTintColor:'#fff'
             }}
