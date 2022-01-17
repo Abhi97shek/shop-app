@@ -11,7 +11,7 @@ const ProductDetailsScreen = (props)=>{
         <ScrollView>
                 <Image style={styles.image} source={{uri:selectedProduct.imageUrl}}/>
                 <View style={styles.actions}>
-                <Button  title="Add to Cart"/>
+                <Button color="#D22779" title="Add to Cart"/>
                 </View>
                 <Text style={styles.price}>${selectedProduct.price.toFixed(2)}</Text>
                 <Text style={styles.decription}>{selectedProduct.decription}</Text>

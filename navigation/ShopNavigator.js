@@ -12,7 +12,7 @@ const ShopNavigator = (props)=>{
                 options={{
                     title:'All Products',
                     headerStyle:{
-                        backgroundColor:'#f4511e'
+                        backgroundColor:'#E60965'
                     },
                     headerTintColor:'#fff'
                 }}
@@ -22,7 +22,7 @@ const ShopNavigator = (props)=>{
                 options={{
                     title:'Product Detail',
                     headerStyle:{
-                        backgroundColor:'#f4511e'
+                        backgroundColor:'#E60965'
                     },
                     headerTintColor:'#fff'
                 }}

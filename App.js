@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStore,combineReducers } from "redux";
 import { Provider } from "react-redux";
@@ -9,6 +10,14 @@ import ProductDetailsScreen from './screens/shop/ProductDetailsScreen';
 
 
 
+const fetchFonts = ()=>{
+
+  return Font.loadAsync({
+      'product-sans': require('./assets/fonts/Product-Sans-Regular.ttf'),
+      'product-sans-bold':require('./assets/fonts/Product-Sans-Bold.ttf')
+  });
+
+};
 const rootReducer = combineReducers({
   products:ProductReducer
 });
@@ -16,11 +25,18 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 export default function App() {
-  return (
-    <Provider store={store}>
-      <ShopNavigator />
-    </Provider>
-  );
+
+ 
+
+  
+    return (
+      <Provider store={store}>
+        <ShopNavigator />
+      </Provider>
+    );
+  
+
+ 
 }
 
 const styles = StyleSheet.create({
