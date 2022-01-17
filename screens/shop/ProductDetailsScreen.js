@@ -8,14 +8,48 @@ const ProductDetailsScreen = (props)=>{
     const selectedProduct = useSelector((state)=> state.products.availableProducts.find(prod=> prod.id === productId));
 
     return (
-        <View>
-        <Text>{selectedProduct.title}</Text>
-        </View>
+        <ScrollView>
+                <Image style={styles.image} source={{uri:selectedProduct.imageUrl}}/>
+                <View style={styles.actions}>
+                <Button  title="Add to Cart"/>
+                </View>
+                <Text style={styles.price}>${selectedProduct.price.toFixed(2)}</Text>
+                <Text style={styles.decription}>{selectedProduct.decription}</Text>
+        </ScrollView>
     )
 
 };
 
-const style = StyleSheet.create({
+// ProductDetailsScreen.navigationOptions = (navData)=>{
+
+//     console.log(navData.navigation.route.params.productTile);
+//     return {
+//         headerTitle : navData.navigation.route.params.productTitle
+//     }
+
+// };
+
+
+const styles = StyleSheet.create({
+        image:{
+            width:'100%',
+            height:300,
+        },
+        price:{
+            fontSize:20,
+            color:'#888',
+            textAlign:'center',
+            marginVertical:20,
+
+        },
+        decription:{
+            fontSize:14,
+            textAlign:'center'
+        },
+        actions:{
+            marginVertical:10,
+            alignItems:'center'
+        }
 
 });
 
