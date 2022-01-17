@@ -3,11 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStore,combineReducers } from "redux";
 import { Provider } from "react-redux";
 import ProductReducer from "./store/reducers/products";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ShopNavigator from './navigation/ShopNavigator';
 import ProductOverviewScreen from './screens/shop/ProductOverviewScreen';
+import ProductDetailsScreen from './screens/shop/ProductDetailsScreen';
 
-const Stack = createNativeStackNavigator();
+
 
 const rootReducer = combineReducers({
   products:ProductReducer
@@ -18,19 +18,7 @@ const store = createStore(rootReducer);
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="All Products" component={ProductOverviewScreen}
-            options={{
-              headerStyle:{
-                backgroundColor:'#0C1E7F'
-              },
-              headerTintColor:'#fff'
-            }}
-          />
-     
-      </Stack.Navigator>
-      </NavigationContainer>
+      <ShopNavigator />
     </Provider>
   );
 }
