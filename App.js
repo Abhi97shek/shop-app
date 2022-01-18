@@ -7,7 +7,7 @@ import ProductReducer from "./store/reducers/products";
 import ShopNavigator from './navigation/ShopNavigator';
 import ProductOverviewScreen from './screens/shop/ProductOverviewScreen';
 import ProductDetailsScreen from './screens/shop/ProductDetailsScreen';
-
+import cartReducer from './store/reducers/cart';
 
 
 const fetchFonts = ()=>{
@@ -19,7 +19,8 @@ const fetchFonts = ()=>{
 
 };
 const rootReducer = combineReducers({
-  products:ProductReducer
+  products:ProductReducer,
+  cart:cartReducer
 });
 
 const store = createStore(rootReducer);
